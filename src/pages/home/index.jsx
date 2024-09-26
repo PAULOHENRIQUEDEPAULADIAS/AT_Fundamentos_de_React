@@ -14,6 +14,8 @@ export default function Home(){
     const [openAdd, setOpenAdd] = useState(false)
     const [openFav, setOpenFav] = useState(false)
 
+    const [formData, SetFormData] = useState({none: "", preco:"", fornecedor:"", url:"", descricao:""})
+
     const mock = [
         {
             id: 1,
@@ -156,19 +158,43 @@ export default function Home(){
             <Footer />
             <Modal  open={openAdd} onClose={()=>setOpenAdd(false)} center>
                 <div className={style.container_modal}>
-                    <h1>Hello Adicionar</h1>
+                    <h1>Adicionar Hotel</h1>
 
-                    <input placeholder="Nome do Produto" />
+                    <input
+                    value={formData.nome}
+                    onChange={(event) =>
+                        SetFormData({ ...formData, nome:event.target.value})
+                    } 
+                    placeholder="Nome do Produto" />
 
                     <div className={style.row}>
-                       <input placeholder="Preco" />
-                      <input placeholder="Fornecedor" />
+                       <input
+                       value={formData.preco}
+                       onChange={(event) =>
+                           SetFormData({ ...formData, preco:event.target.value})
+                       } placeholder="Preco" />
+                      <input 
+                      value={formData.fornecedor}
+                      onChange={(event) =>
+                          SetFormData({ ...formData, fornecedor:event.target.value})
+                      }
+                      placeholder="Fornecedor" />
                     </div>
-                    <input placeholder="URL da Imagem" />
-                    <textarea placeholder="Descrição"></textarea>
+                    <input
+                    value={formData.url}
+                    onChange={(event) =>
+                        SetFormData({ ...formData, url:event.target.value})
+                    } 
+                    placeholder="URL da Imagem" />
+                    <textarea 
+                    value={formData.descricao}
+                    onChange={(event) =>
+                        SetFormData({ ...formData, descricao:event.target.value})
+                    }
+                    placeholder="Descrição"></textarea>
                     <div className={style.row}>
                         <button>Salvar</button>
-                        <button>Cancelar</button>
+                        <button onClick={()=> setOpenAdd(false)}>Cancelar</button>
                     </div>
                 </div>
 

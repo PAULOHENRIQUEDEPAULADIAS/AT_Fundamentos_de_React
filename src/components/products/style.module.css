@@ -8,7 +8,7 @@
     padding: 20px;
     border-radius: 5px;
     min-height: 15.5rem;
-    max-height: 15.5rem;
+    max-height: 17.5rem;
 }
 
 .card img{
@@ -32,6 +32,11 @@
     width: 100%;
     font-size: 1.25rem;
     font-weight: 300;
+}
+
+.card .float_button_fav_div{
+    display: flex;
+    flex-direction: row;
 }
 
 .card .float_button_fav_img{
