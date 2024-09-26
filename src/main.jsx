@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 
+import "./index.css";
 
 import Home from "./pages/home";
-import Products from './pages/products';
+import Details from "./pages/details";
+import NotFound from "./pages/not_found";
 
 
 const router = createBrowserRouter([
@@ -13,8 +15,12 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/products",
-    element: <Products />,
+    path: "/details",
+    element: <Details />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
