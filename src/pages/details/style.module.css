@@ -36,3 +36,11 @@
     margin-top: 40px;
 }
 
+.return{
+    position: absolute;
+    border-radius: 5px;
+    color: white;
+    background-color: deepskyblue;
+    padding: 5px;
+    cursor: pointer;
+}

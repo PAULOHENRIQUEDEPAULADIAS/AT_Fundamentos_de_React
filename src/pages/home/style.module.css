@@ -20,6 +20,9 @@
     bottom: 10px;
     cursor: pointer;
     transition: transform 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .float_button_add:hover{
