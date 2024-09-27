@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Modal } from "react-responsive-modal";
 import { useState, useEffect } from "react";
 
-import Header from "../../components/header";
-import Product from "../../components/products";
-import Footer from "../../components/footer";
+import Header from "../../components/header.jsx";
+import Product from "../../components/products.jsx";
+import Footer from "../../components/footer.jsx";
 
 import style from "./style.module.css";
 import "react-responsive-modal/styles.css";

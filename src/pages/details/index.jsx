@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import  {useEffect, useState} from "react";
 
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+import Header from "../../components/header.jsx";
+import Footer from "../../components/footer.jsx";
 
 import style from "./style.module.css";
 

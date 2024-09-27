@@ -1,12 +1,12 @@
-// index.js
+
 import ReactDOM from 'react-dom/client';
 import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import "./index.css";
 
-import Home from "./pages/home";
-import Details from "./pages/details";
-import NotFound from "./pages/not_found";
+import Home from "./pages/home.jsx";
+import Details from "./pages/details.jsx";
+import NotFound from "./pages/not_found.jsx";
 
 const AppRoutes = () => (
   <Router>
