@@ -37,7 +37,7 @@ export default function Products(props){
     return(
 
         <div className={style.card}>
-            <Link to={`/details/${props.produto.id}`}>
+            <Link to={`/minha-app/details/${props.produto.id}`}>
                 <p>{props.produto.nome}</p>
                 <img src={props.produto.img}/>
                 <p>Nota: {props.produto.classificacao}</p>

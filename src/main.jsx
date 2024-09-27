@@ -1,35 +1,31 @@
-
+// index.js
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import "./index.css";
 
 import Home from "./pages/home";
 import Details from "./pages/details";
 import NotFound from "./pages/not_found";
-import RedirectToMinhaApp from "./base_name";
 
+const AppRoutes = () => (
+  <Router>
+    <Routes>
+      
+      <Route path="/" element={<Home />} />
+      
+    
+      <Route path="/minha-app" element={<Home />} />
 
-const router = createBrowserRouter([
-  {
-    path: "/", 
-    element: <RedirectToMinhaApp />,
-  },
-  {
-    path: "/minha-app",
-    element: <Home />,
-  },
-  { 
-    path: "/minha-app/details/:id",
-    element: <Details />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-]);
+      
+      <Route path="/minha-app/details/:id" element={<Details />} />
+      
+    
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Router>
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} ></RouterProvider>
+  <AppRoutes />
 );
