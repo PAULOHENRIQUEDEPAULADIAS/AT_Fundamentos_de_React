@@ -9,6 +9,7 @@ import Details from "./pages/details";
 import NotFound from "./pages/not_found";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",

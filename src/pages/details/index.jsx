@@ -14,6 +14,7 @@ export default function Details(){
     
     const { id } = useParams();
     const [product, setProduct] = useState(null);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const storedProducts = JSON.parse(localStorage.getItem("products"));
@@ -27,16 +28,33 @@ export default function Details(){
         return <div>Loading...</div>;
     }
 
+    const images = [product.img, product.img1, product.img2].filter(Boolean); 
+
+    const handleNextImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const handlePreviousImage = () => {
+        setCurrentImageIndex((prevIndex) => 
+            (prevIndex - 1 + images.length) % images.length
+        );
+    };
+
     return (
         <div className={style.container}>
             <Header />
                 <div className={style.content}>
-                    <div><img src={product.img} alt={product.nome}/>
-                    </div>
+
+                <div className={style.imageCarousel}>
+                    <button onClick={handlePreviousImage}>&lt;</button>
+                    <img src={images[currentImageIndex]} alt={product.nome} />
+                    <button onClick={handleNextImage}>&gt;</button>
+                </div>
                     <div className={style.details}>
                         <p>{product.nome}</p>
                         <p>{product.id}</p>
-                        <p>{product.preco}</p>
+                        <br/>
+                        <p>R$ {product.preco}</p>
                         <p>{product.fabricante}</p>
                         <p>{product.descricao}</p>
                     </div>
