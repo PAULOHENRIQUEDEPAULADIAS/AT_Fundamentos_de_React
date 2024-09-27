@@ -26,7 +26,7 @@ export default function Home() {
     const [products, setProducts] = useState([]);
     const [favorites, setFavorites] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [sortOrder, setSortOrder] = useState("classificacao"); // Novo estado para a ordenação
+    const [sortOrder, setSortOrder] = useState("classificacao");
 
     const handleSaveProduct = () => {
         if (!formData.nome || !formData.preco || !formData.classificacao || !formData.url || !formData.descricao) {
@@ -118,12 +118,12 @@ export default function Home() {
         product.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Função para ordenar os produtos
+
     const sortedProducts = [...filteredProducts].sort((a, b) => {
         if (sortOrder === "classificacao") {
-            return b.classificacao - a.classificacao; // Maior para menor
+            return b.classificacao - a.classificacao; 
         } else if (sortOrder === "preco") {
-            return b.preco - a.preco; // Maior para menor
+            return b.preco - a.preco; 
         }
         return 0;
     });
@@ -149,7 +149,6 @@ export default function Home() {
             <div className={style.container}>
                 <h2>Produtos</h2>
                 <div className={style.container_list}>
-                    {/* Usando sortedProducts em vez de filteredProducts */}
                     {sortedProducts.map((produto) => (
                         <Product
                             key={produto.id}
@@ -256,8 +255,11 @@ export default function Home() {
                             key={produto.id}
                             produto={produto}
                             setOpenAdd={setOpenAdd}
+                            setOpenFav={setOpenFav}
                             setFormData={setFormData}
                             handleDeleteProduct={handleDeleteProduct}
+                            favorites={favorites}
+                            handleAddToFavorites={handleAddToFavorites}
                             handleRemoveFromFavorites={handleRemoveFromFavorites}
                         />
                     ))}
