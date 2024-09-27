@@ -4,9 +4,9 @@ import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 
 import "./index.css";
 
-import Home from "./pages/home.jsx";
-import Details from "./pages/details.jsx";
-import NotFound from "./pages/not_found.jsx";
+import Home from "./pages/home/index.jsx";
+import Details from "./pages/details/index.jsx";
+import NotFound from "./pages/not_found/index.jsx";
 
 const AppRoutes = () => (
   <Router>
