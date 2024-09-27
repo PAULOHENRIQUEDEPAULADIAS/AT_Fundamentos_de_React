@@ -1,24 +1,15 @@
 
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, useNavigate} from "react-router-dom";
-import { useEffect } from 'react';
+import { createBrowserRouter, RouterProvider} from "react-router-dom";
+
 
 import "./index.css";
 
 import Home from "./pages/home";
 import Details from "./pages/details";
 import NotFound from "./pages/not_found";
+import RedirectToMinhaApp from "./base_name";
 
-function RedirectToMinhaApp() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-
-    navigate('/minha-app', { replace: true });
-  }, [navigate]);
-
-  return null;
-}
 
 const router = createBrowserRouter([
   {
